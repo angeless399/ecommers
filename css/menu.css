@@ -1,0 +1,162 @@
+ /* first mobil */
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3000;
+
+    display: flex;
+    flex-direction: column;
+}
+
+nav label {
+    width: 100%;
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    border-left: 5px solid var(--acento);
+    padding: 16px 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav .btn {   
+    padding: 10px;
+    font-size: 1.5em; 
+    cursor: pointer;
+}
+
+nav span.marca {
+    font-size: 1.8em;
+    color: var(--color-secundario);
+    margin-left: 5px;
+}
+
+nav #open-menu {
+    display: none;
+}
+/* 
+nav .marca {
+    font-size: 1.5em;
+} */
+
+nav .link  {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background: var(--transparencia);
+    border-left: 5px solid var(--acento);
+    margin-left: -90%;
+    transition: all 0.5s;
+}
+
+
+nav .link a{
+
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 15px;
+    border-top: 1px solid var(--color-secundario);
+    display: flex;
+    gap: 10px;
+   
+}
+
+nav #open-menu:checked ~ .link{
+    margin-left: 0;
+}
+
+nav .link .usuario {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid var(--color-secundario);
+    justify-content: end;
+    padding: 12px;
+}
+
+nav .link .usuario a {
+    border-top: 0;
+    font-size: 1em;
+    /* gap: 5px; */
+    border: 1px solid var(--acento);
+    margin: 0 10px;
+    border-radius: 5px;
+    color : var(--acento);
+}
+
+nav .link .usuario a span {
+    font-size: 0.8em;
+}
+nav .link .usuario a:hover {
+    background-color: var(--acento);
+    color: var(--color-principal);
+}
+
+
+@media screen and (min-width: 768px) {
+    /* breakpoint para tablet */
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        border-left: 5px solid var(--acento);
+    }
+    nav label {
+        border-left: 0;
+        padding: 21px;
+    }
+    nav .btn {
+        display: none;
+    }
+    nav .link {
+        flex-direction: row;
+        /* gap: 20px; */
+        text-align: center;
+        width: auto;
+        border-left: 0;
+        background: var(--color-principal);
+    }
+
+    nav .link a{
+    border-top: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    }
+
+nav .link a:hover {
+    color: var(--acento);
+    border-bottom: 5px solid var(--acento);
+}
+
+nav .link .usuario{
+    border: 0;
+} 
+
+nav .link .usuario a span {
+    display: none;
+}
+
+
+}
+
+@media screen and (min-width: 1024px) {
+    /* breakpoint para pc */
+    nav {
+        background-color: var(--color-principal);
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    nav .link a {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    nav .link .usuario a {
+        padding: 15px;
+    }
+    nav .link .usuario a span {
+        display: block;
+    }
+
+}
